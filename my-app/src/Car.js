@@ -7,9 +7,14 @@ const Car = () => {
     const [color, setColor] = useState("");
     const [year, setYear] = useState("");
 
+    const printValues = e => {
+        e.preventDefault();
+        console.log(brand, model, color, year);
+    }
+
     return (
         <div>
-            <form>
+            <form onSubmit={printValues}>
                 <label htmlFor="brand">
                    brand
                    <input
@@ -52,7 +57,11 @@ const Car = () => {
                       onChange={(e) =>  setYear(e.target.value)}
                    />
                 </label>
+
+                <button>Submit</button>
             </form>
+
+            
         </div>
     )
 
